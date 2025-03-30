@@ -53,3 +53,14 @@ window.addEventListener('scroll', () => {
         header.classList.remove('sticky');
     }
 });
+document.addEventListener('DOMContentLoaded', function() {
+    // Set current year in footer
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    
+    // Increment download count when download link is clicked
+    document.getElementById('downloadLink').addEventListener('click', function() {
+        const countElement = document.getElementById('downloadCount');
+        let count = parseInt(countElement.textContent);
+        countElement.textContent = count + 1;
+    });
+});
